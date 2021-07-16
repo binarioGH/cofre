@@ -21,11 +21,11 @@ class CipherHandler:
 
 
 	def encrypt(self, text, key):
-		pass
+		return self.translate(text, key, "e")
 
 
 	def decrypt(self, text, key):
-		pass
+		return self.translate(text, key, "d")
 
 
 
@@ -62,11 +62,29 @@ class CipherHandler:
 				# The number that will be added or substracted.
 				current_numeric_key = self.abc.find(  key[key_index]  ) + 1
 
+
+				'''
+				In both modes, it is going to be checked if the current index is bigger or lower than it is
+				supposed to be, and if it is, it will be moduled by the lenght of the alphabet.
+				'''
+
 				if mode == "e":
-					pass
+					current_index -= current_numeric_key
+					
+					if current_index <= -len(self.abc):
+						current_index %= -len(self.abc)
+
 
 				elif mode == "d":
-					pass
+					current_index += current_numeric_key
+
+					if current_index >= len(self.abc):
+						current_index %= len(self.abc)
+
+				translated_word += self.abc[current_index]
+
+
+
 
 			#I dont know if the key index should be += 1 when the current_index == -1...
 			#Must ask in cryptography forums later.
