@@ -1,5 +1,5 @@
 #-*-coding: utf-8-*-
-
+from hashlib import sha512
 
 
 class CipherHandler:
@@ -16,7 +16,6 @@ class CipherHandler:
 
 		#Add special characters
 		self.abc += "1234567890+-*/!@#$%^&*()=~"
-
 
 
 
@@ -91,3 +90,16 @@ class CipherHandler:
 			key_index += 1
 
 		return translated_word
+
+	def checksum(self, password, old_hash):
+		new_hashed_password = sha512(password.encode()).hexdigest()
+
+		if new_hashed_password == old_hash:
+			return True
+
+		return False
+
+
+	def return_hashed_string(self, text):
+		hashed = sha512(text.encode()).hexdigest()
+		return hashed

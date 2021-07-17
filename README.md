@@ -8,6 +8,6 @@
 
 - [ ] GUI
 - [ ] Store encrypted passwords
-- [ ] Hash checks
+- [x] Hash checks
 - [ ] Implement bulletproof encryption algorithm
 - [ ] UTF-8 Characters

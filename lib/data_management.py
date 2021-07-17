@@ -2,6 +2,7 @@
 
 from os.path import isfile, isdir
 from codecs import open as copen
+from json import dumps, loads
 
 
 class Storage:
@@ -12,11 +13,10 @@ class Storage:
 		self.data = {}
 		
 		if isfile(filename):
-			self.load_file (filename)
+			self.load_file(filename)
 
 		else:
 			self.create_database(filename)
-			self.load_file(filename)
 
 
 	def load_file(self, filename):
@@ -24,7 +24,9 @@ class Storage:
 			with copen(filename, 'r', encoding='utf-8') as f:
 				content = loads(f.read())
 
-		except:
+		except Exception as e:
+			print(e)
+			print("Couldn't load the file.")
 			self.file = ""
 			self.data = {}
 
@@ -33,11 +35,37 @@ class Storage:
 			self.data = content 
 
 
-	def create_database(self, filename):
-		content = {}
+	def save_new_user(self, site, user, password):
+		'''
+		Save data to the database.
+		'''
 
-		with copen(filename, "w", encoding='utf-8') as f:
-			f.write(dumps(content))
+		if site in self.data['sites']:
+			self.data['sites'][site]['accounts'][user] = password
+
+		else:
+			self.data['sites'][site] = {
+				"accounts": {
+					user: password
+				}
+			}
+
+		self.save_data()
+
+	def set_checksum(self, key_phrase, crypto):
+		self.data['checksum'] = crypto.return_hashed_string(key_phrase)
+	
+
+
+	def create_database(self, filename):
+		content = {
+			'sites': {},
+			'checksum' : ""
+		}
+
+		self.data = content
+		self.file = filename
+		self.save_data()
 
 
 
@@ -45,21 +73,31 @@ class Storage:
 		Structure:
 
 		{
-			"site name": {
-					"logo": "url of site's logo",
+			"sites": {
+				"site name": {
 
-					"accounts": [
-						{
-							"username" : "username",
-							"password" : "encrypted password",
-						},
-						{
-							...
-						}
-					]
+						"accounts": 
+							{
+								"username" : "password"
+							},
+						
+					}
 				}
-
-			}
+			},
+			"checksum" : "SHA512 hash"
 		}
 		'''
 
+	def save_data(self):
+		'''
+		Store data in file.
+		'''
+		try:
+			with copen(self.file, "w", encoding='utf-8') as f:
+				dump_data = dumps(self.data, indent=4)
+				print(dump_data)
+				f.write(dump_data)
+
+		except Exception as e:
+			print(e)
+			self.file = ""
