@@ -33,16 +33,17 @@
 				</ul>
 			</div>
 			<div class="lined" id='contentmanager'>
-				<div class='container' id='newaccount'>
+				<div class='container' id='newaccount' style="z-index: 4;">
 					<div id='newaccountform'>
-						<input type="text" name="site" id='site' placeholder="Site">
-						<span class='break'>
-						<input type="text" name="username" id='username' placeholder="Username">
-						<span class='break'>
-						<input type="text" class='lined' name="password" id='password' placeholder="Password">
-						<input type="button" class='lined' name="generate" id='generate', value='Create password'>
-						<span class='break'>
-						<input type="button" id='sendnewaccount' value="Create new account">
+						<span class='break'></span>
+						<input type="text" class="dataentry" id='site' placeholder="Site">
+						<span class='break'></span>
+						<input type="text" class="dataentry" id='username' placeholder="Username">
+						<span class='break'></span>
+						<input type="text" class='lined dataentry' name="password" id='password' placeholder="Password">
+						<input type="button" class='lined formbut' name="generate" id='generate', value='Random'>
+						<span class='break'></span>
+						<input type="button"  class='formbut' id='sendnewaccount' value="Create new account">
 					</div>
 				</div>
 				<div class="container" id='navaccounts'>
