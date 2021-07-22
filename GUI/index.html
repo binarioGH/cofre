@@ -26,7 +26,29 @@
 
 
 		<article class='page' id='accounts'>
-			<h1>uwu</h1>
+			<div class="lined" id='menu'>
+				<ul>
+					<li class="menunav" goto='navaccounts'>Navigate accounts</li>
+					<li class="menunav" goto='newaccount'>Add new account</li>
+				</ul>
+			</div>
+			<div class="lined" id='contentmanager'>
+				<div class='container' id='newaccount'>
+					<div id='newaccountform'>
+						<input type="text" name="site" id='site' placeholder="Site">
+						<span class='break'>
+						<input type="text" name="username" id='username' placeholder="Username">
+						<span class='break'>
+						<input type="text" class='lined' name="password" id='password' placeholder="Password">
+						<input type="button" class='lined' name="generate" id='generate', value='Create password'>
+						<span class='break'>
+						<input type="button" id='sendnewaccount' value="Create new account">
+					</div>
+				</div>
+				<div class="container" id='navaccounts'>
+					<h1>All accounts</h1>
+				</div>
+			</div>
 		</article>
 
 		

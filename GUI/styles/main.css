@@ -1,7 +1,8 @@
 /*
 
-	Red: #E73333;
+	main: #1d97af;
 	White:  #F8F8FF;
+	Gray:  #444444;
 	Black:  #181819;
 
 */
@@ -10,7 +11,7 @@
 header{
 	width: 100%;
 	height: 15vh;
-	background-color: #E73333;
+	background-color: #1d97af;
 	position: relative;
 }
 
@@ -67,6 +68,7 @@ nav{
 .navop{
 	margin-left: 10%;
 	margin-top: 4%;
+	font-size: 120%;
 	text-decoration: none;
 	color: #F8F8FF;
 	cursor: pointer;
@@ -89,9 +91,83 @@ article{
 	background-color: #F8F8FF;
 }
 
-#settings{
+
+#menu{
+	z-index: 20;
+	width: 20%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	transition: all 0.5s;
+	background: #444444;
+}
+#menu:hover{
+	width: 30%;
+}
+
+
+.menunav{
+	text-align: center;
+	margin-top: 10%;
+	font-size: 110%;
+	color: #F8F8FF;
+	transition: all 0.5s;	
+}
+
+#menu:hover .menunav{
+	font-size: 140%;
+}
+
+.menunav:hover{
+	color: #ffffff;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+
+
+#contentmanager{
+	position: absolute;
+	right: 0;
+	width: 80%;
+	height: 100%;
+	background: red;
+	
 
 }
 
-#accounts{
+.container{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #F8F8FF;
+	
+}
+
+
+
+#navaccounts{
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+}
+
+#newaccountform{
+	width: 70%;
+	height: 90%;
+	margin-left: 15%;
+	margin-top: 5%;
+}
+
+#newaccountform input{
+	margin-top: 5%;
+}
+
+
+#newaccountform input[type=text]{
+	width: 40%;
+	height: 5%;
+	background: rgba(255, 255, 255, 0.8);
 }
