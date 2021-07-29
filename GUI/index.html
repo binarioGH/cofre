@@ -30,6 +30,7 @@
 				<ul>
 					<li class="menunav" goto='navaccounts'>Navigate accounts</li>
 					<li class="menunav" goto='newaccount'>Add new account</li>
+					<li class="menunav" goto='confirmpass'>Password</li>
 				</ul>
 			</div>
 			<div class="lined" id='contentmanager'>
@@ -40,7 +41,7 @@
 						<span class='break'></span>
 						<input type="text" class="dataentry" id='username' placeholder="Username">
 						<span class='break'></span>
-						<input type="text" class='lined dataentry' name="password" id='password' placeholder="Password">
+						<input type="text" class='lined dataentry' name="password" id='newpassword' placeholder="Password">
 						<input type="button" class='lined formbut' name="generate" id='generate', value='Random'>
 						<span class='break'></span>
 						<input type="button"  class='formbut' id='sendnewaccount' value="Create new account">
@@ -48,6 +49,13 @@
 				</div>
 				<div class="container" id='navaccounts'>
 					<h1>All accounts</h1>
+				</div>
+				<div class="container" id='confirmpass'>
+					<div class='middled'>
+						<input type="password" id="universalpass" class='dataentry' placeholder="Password">
+						<span class='break'></span>
+						<button id='confirmpassw' class='lined formbut'>Confirm</button>
+					</div>
 				</div>
 			</div>
 		</article>

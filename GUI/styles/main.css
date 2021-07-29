@@ -24,6 +24,16 @@ header{
 	display: block;
 }
 
+.middled{
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	height: 80%;
+	margin-top: 2%;
+	text-align: center;
+}
+
+
 .maintext{
 	color:  #F8F8FF;
 	font-size: 140%;
@@ -159,11 +169,13 @@ article{
 	height: 90%;
 	margin-left: 15%;
 	margin-top: 5%;
+	text-align: center;
 }
 
 #newaccountform input{
 	margin-top: 5%;
 }
+
 
 
 .dataentry{
@@ -174,6 +186,14 @@ article{
 	color: white;
 	border-radius: 10px;
 }
+
+#newpassword{
+	width: 40%;
+}
+#generate{
+	width: 10%;
+}
+
 
 .dataentry::placeholder{
 	color: white;
@@ -190,3 +210,11 @@ article{
 }
 
 
+#universalpass{
+	margin-top: 20%;
+	text-align: center;
+}
+
+#confirmpassw{
+	margin-top: 5%;
+}

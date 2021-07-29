@@ -7,7 +7,7 @@
 # TODO
 
 - [ ] GUI
-- [ ] Store encrypted passwords
+- [x] Store encrypted passwords
 - [x] Hash checks
 - [ ] Implement bulletproof encryption algorithm
 - [ ] UTF-8 Characters
