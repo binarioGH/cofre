@@ -188,7 +188,7 @@ article{
 }
 
 #newpassword{
-	width: 40%;
+	width: 39%;
 }
 #generate{
 	width: 10%;
@@ -215,6 +215,37 @@ article{
 	text-align: center;
 }
 
+#account-container{
+	width: 70%;
+	margin-left: 15%;
+	height: 100%;
+	overflow-y: auto;
+	text-align: center;
+}
+
+
 #confirmpassw{
+	margin-top: 5%;
+}
+
+
+
+.info-display{
+	width: 50%;
+	margin-left: 25%;
+	margin-top: 5%;
+	background: #444444;
+	color: #F8F8FF;
+	padding: 10px;
+	padding-bottom: 25px;
+	border-radius: 20px;
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+.infotag{
+	width: 50%;
+	margin-left: 25%;
+	text-align: initial;
 	margin-top: 5%;
 }
