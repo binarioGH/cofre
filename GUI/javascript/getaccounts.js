@@ -2,15 +2,16 @@
 let account_container = document.getElementById("account-container");
 
 
+
 function get_account_information(){
-	console.log("here");
+	//Todo
 	console.log(this.getElementsByClassName("infotag")[2].getAttribute('hashedpass'));
 }
 
 
-async function get_accounts(){
-	let accounts = await eel.get_accounts()();
-	for(account of accounts){
+function populate(account_list){
+	account_container.innerHTML = '';
+	for(account of account_list){
 		//Create information container element 
 		let account_info = document.createElement("div");
 		account_info.classList.add("info-display");
@@ -43,5 +44,34 @@ async function get_accounts(){
 	}
 }
 
+	
+async function get_accounts(){
+	let accounts = await eel.get_accounts()();
+	return accounts;
+}
 
-get_accounts();
+//Populate with accounts when the program is opened.
+let ACCOUNTS;
+get_accounts()
+.then(r => {
+	ACCOUNTS = r;
+	populate(ACCOUNTS);
+});
+
+
+
+//Search accounts.
+let search_bar = document.getElementById("searcbarinput");
+
+
+search_bar.addEventListener("input", function(){
+	let current_input = search_bar.value;
+	let search_options = [];
+	for(account of ACCOUNTS){
+		console.log(account)
+		if(account['site'].indexOf(current_input) != -1 || account['user'].indexOf(current_input) != -1){
+			search_options.push(account);
+		}
+	}
+	populate(search_options);
+});
