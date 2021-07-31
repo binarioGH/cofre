@@ -210,8 +210,14 @@ article{
 }
 
 
+#password-instruction{
+	margin-top: 15%;
+	font-size: 140%;
+	font-weight: normal;
+}
+
 #universalpass{
-	margin-top: 20%;
+	margin-top: 10%;
 	text-align: center;
 }
 

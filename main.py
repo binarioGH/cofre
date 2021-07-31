@@ -6,6 +6,7 @@ from lib.data_management import *
 from lib.data_generator import *
 from lib.cryptography import *
 from codecs import open as copen
+from random import randint
 import pyperclip
 
 TOOLS = {
@@ -15,12 +16,29 @@ TOOLS = {
 }
 
 
+@eel.expose
+def new_password():
+	combination = TOOLS['CRYPTO'].abc
+	random_length = randint(12, 20) 
+	return TOOLS['DATAGEN'].generate_random_password(combination, random_length)
+
+
+@eel.expose
+def add_new_account(site, account, password):
+	TOOLS['STORAGE'].save_new_user(site, account, password)
+
+
 
 @eel.expose
 def notify(message):
 	#TODO: Toast notification.
 	print(message)
 	
+
+@eel.expose
+def encrypt(key, password):
+	result = TOOLS['CRYPTO'].encrypt(password, key)
+	return result
 
 @eel.expose()
 def decrypt(key, hashed_pass, copy_to_clipboard=True):
