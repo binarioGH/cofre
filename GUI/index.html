@@ -6,6 +6,7 @@
 	<title>Cofre - Password manager</title>
 	<link rel="stylesheet" type="text/css" href="styles/reset.css">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link rel="stylesheet" type="text/css" href="styles/settings.css">
 </head>
 <body>
 	<header>
@@ -14,14 +15,25 @@
 		</div>
 		<nav class="lined">
 			<ul class="lined" id='searchmenu'>
-				<li class="lined navop" goto='accounts'>Accounts</li>
-				<li class="lined navop" goto='settings'>Settings</li>
+				<li class="lined navop" goto='accounts' id='accounts-tab'>Accounts</li>
+				<li class="lined navop" goto='settings' id='settings-tab'>Settings</li>
 			</ul>
 		</nav>
 	</header>
 	<section>
 		<article class='page' id='settings'>
-			<h1>owo</h1>
+			<div class="middled">
+				<p id='error-message-newpass'></p>
+				<input class="dataentry" id='oldpassword' placeholder="Last Password">
+				<span class='break separated'></span>
+				<input class="dataentry" id='setnewpassword' type='password' placeholder="New Password">
+				<span class='break separated'></span>
+				<input class="dataentry" id='confirmnewpass' type='password' placeholder="Confirm New Password">
+				<span class='break separated'></span>
+				<button class="formbut" id='random-pass-new'>Random Password</button>
+				<button class="formbut">Change password</button>
+
+			</div>
 		</article>
 
 
@@ -77,5 +89,6 @@
 	</footer>
 	<script type="text/javascript" src='javascript/navigation.js'></script>
 	<script type="text/javascript" src='javascript/handle_accounts.js'></script>
+	<script type="text/javascript" src='javascript/settings.js'></script>
 </body>
 </html>

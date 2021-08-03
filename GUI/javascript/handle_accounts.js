@@ -3,7 +3,7 @@ let account_container = document.getElementById("account-container");
 let ultimate_password = document.getElementById("confirmpass");
 let universalpass = document.getElementById("universalpass");
 let disclaimer = document.getElementById("password-instruction");
-let encrypting_passowrd = false;
+let encrypting_passowrd = false; //Used to decide if the confirm password section should send a new account request or a decrypt request.
 let site = document.getElementById("site");
 let username = document.getElementById("username");
 let password = document.getElementById("newpassword");
@@ -17,6 +17,7 @@ get_accounts()
 	ACCOUNTS = r;
 	populate(ACCOUNTS);
 });
+
 
 
 

@@ -24,6 +24,10 @@ header{
 	display: block;
 }
 
+.separated{
+	margin-top: 2%;
+}
+
 .middled{
 	width: 80%;
 	margin-left: 10%;

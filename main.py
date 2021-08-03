@@ -28,6 +28,14 @@ def add_new_account(site, account, password):
 	TOOLS['STORAGE'].save_new_user(site, account, password)
 
 
+@eel.expose
+def is_checksum_empty():
+	if len(TOOLS['STORAGE'].data['checksum']) != 128:
+		return False
+
+	return True
+
+
 
 @eel.expose
 def notify(message):

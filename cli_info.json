@@ -1,10 +1,15 @@
 {
     "sites": {
-        "facebook": {
+        "Facebook": {
             "accounts": {
-                "diego owo": "0XRYiU#^D7*JE"
+                "dio doe": "UOAzcD-QSr$lbr!PCEaO"
+            }
+        },
+        "instagram": {
+            "accounts": {
+                "stonkscodeboi": "bvXYrBZ+)8zA$XbhF"
             }
         }
     },
-    "checksum": "31dd8a9c7a17012da11735b8acbecb61d4ef4d7c9ed30190b4420d6b3688de0de3dc70f27b64a7269cb165697da38d9822fde591b3e5d2ac78f90a7f6a67a070"
+    "checksum": ""
 }
