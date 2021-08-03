@@ -95,7 +95,6 @@ class Storage:
 		try:
 			with copen(self.file, "w", encoding='utf-8') as f:
 				dump_data = dumps(self.data, indent=4)
-				print(dump_data)
 				f.write(dump_data)
 
 		except Exception as e:

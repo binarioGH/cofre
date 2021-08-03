@@ -92,6 +92,8 @@ class CipherHandler:
 		return translated_word
 
 	def checksum(self, password, old_hash):
+		if type(password) == type(None):
+			return False
 		new_hashed_password = sha512(password.encode()).hexdigest()
 
 		if new_hashed_password == old_hash:
