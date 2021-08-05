@@ -9,13 +9,12 @@ class CipherHandler:
 		I will work to get all utf-8 characters in an optimal way.
 		'''
 
-
 		#Add letters to the alphabet
 		self.abc = "abcdefghijklmnopqrstuvwxyz"
 		self.abc += self.abc.upper()
 
 		#Add special characters
-		self.abc += "1234567890+-*/!@#$%^&*()=~"
+		self.abc += "1234567890+-*/!@#$%^&*()=~ "
 
 
 

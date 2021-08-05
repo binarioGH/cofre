@@ -45,8 +45,14 @@ async function update_master_password(last_password, new_password){
 change_master.addEventListener("click", function(){
 	let npassword1 = new_password.value;
 	let npassword2 = confirm_password.value;
+	if((npassword1.length < 25 || npassword2.length < 25)){
+		error_message = "Your password has to be at least 25 characters long. Try with a phrase that you can remember.";
+		new_password.style.color = 'red';
+		confirm_password.style.color = 'red';
+		return 0;
+	}
 
-	if(npassword1 != npassword2 || (npassword1.length < 1 || npassword2.length < 1)){
+	if(npassword1 != npassword2){
 		error_message.innerText = "Passwords don't match.";
 		new_password.style.color = 'red';
 		confirm_password.style.color = 'red';
@@ -65,6 +71,7 @@ change_master.addEventListener("click", function(){
 			confirm_password.value = "";
 			error_message.innerText = "";
 			accountstab.click();
+			location.reload();
 			
 		}
 		else if(response == -1){
