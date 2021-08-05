@@ -8,11 +8,8 @@ from lib.cryptography import *
 from codecs import open as copen
 from random import randint
 import pyperclip
-#this is a long sentence that i want to test owo
-#kxfv&)o5ap%cqr$Ibqn^j8ep (dE$y)z*bp5tE7hhDkplzi
-#this is a long sentence that i want to test owo
-#u~dbbi)poavhi+C~#fglp)e+g~y+F~hfu
-#this is a test passwor* that is long and atheist
+
+
 TOOLS = {
 	"DATAGEN": DataGenerator(),
 	"STORAGE": Storage('cli_info.json'),
